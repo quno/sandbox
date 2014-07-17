@@ -4,18 +4,43 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width">
 	<title>Device Checker</title>
-	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<style>
+		body {
+			text-align:center;
+		}
+		div {
+			width:200px;
+			margin:10px auto;
+		}
+		#button { 
+			height:40px;
+			border:3px solid #333;
+			border-radius:10px;
+			background-color:#d22;
+			font-size:32px;
+			text-align:center;
+			color:#fff;
+			cursor: pointer;
+		}
+		#display {
+			text-align:left;
+		}
+	</style>
 </head>
 <body>
 <div id="button">check!</div>
 <div id="display"></div>
 <script>
-	var width = window.screen.width;
-	var height = window.screen.height;
-	var str = 'width:' + width + 'px / height:' + height + 'px';
-	$document.ready(function(){
+	$(document).ready(function(){
 		$('#button').click(function(){
-			$('#display').html(str);
+			var width = window.screen.width;
+			var height = window.screen.height;
+			var str = [
+				'width:' + width + 'px',
+				'height:' + height + 'px'
+			];
+			$('#display').html(str.join('<br>'));
 		});
 	});
 </script>
