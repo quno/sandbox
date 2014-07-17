@@ -36,9 +36,11 @@
 		$('#button').click(function(){
 			var width = window.screen.width;
 			var height = window.screen.height;
+			var dpr = window.devicePixelRatio;
 			var str = [
 				'width:' + width + 'px',
-				'height:' + height + 'px'
+				'height:' + height + 'px',
+				'devicePixelRatio:' + dpr
 			];
 			$('#display').html(str.join('<br>'));
 		});
