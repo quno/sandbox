@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+body {
+	margin: 40px;
+}
+h1 {
+	font-size: 28px;
+}
+input#myButton {
+	margin-left: 20px;
+	width: 100px;
+}
+input#mySetting {
+	width: 100px;
+}
+input[type="number"] {
+	width: 40px;
+}
+label {
+	display: inline-block;
+	margin-right: 10px;
+	width:80px;
+	text-align: right;
+}
+textarea {
+	width: 400px;
+	height: 100px;
+}
