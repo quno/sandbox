@@ -1,9 +1,9 @@
 //morse.js
 
 window.onload = function() {
-	var myButton = document.getElementById('myButton');
-	var mySetting = document.getElementById('mySetting');
-	var st = new SignalTimer();
+	let myButton = document.getElementById('myButton');
+	let mySetting = document.getElementById('mySetting');
+	let st = new SignalTimer();
 
 	st.setOutput('result');
 	st.setSignalEventListener(myButton, ['mousedown', 'mouseup']);
@@ -55,7 +55,7 @@ SignalTimer.prototype.setBlankTime = function() {
 			this.blank.time = this.blank.end - this.blank.start;
 			//文字区切りの判断
 			if(this.blank.time > this.setting.blank) {
-				this.output.value += " / ";
+				this.output.value += "  ";
 			}
 			console.log('blank:' + this.blank.time + 'ms');
 			this.blank.start = 0;
@@ -90,7 +90,7 @@ SignalTimer.prototype.setOutput = function(id) {
 };
 //イベントリスナーの設定		
 SignalTimer.prototype.setSignalEventListener = function(element, events) {
-	var that = this;
+	let that = this;
 	events.forEach(function(event_name) {
 		element.addEventListener(event_name,function(event) {
 			that.setPressTime(event);
