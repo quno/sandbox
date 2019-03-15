@@ -55,7 +55,7 @@ SignalTimer.prototype.setBlankTime = function() {
 			this.blank.time = this.blank.end - this.blank.start;
 			//文字区切りの判断
 			if(this.blank.time > this.setting.blank) {
-				this.output.value += "  ";
+				this.output.value += "　";
 			}
 			console.log('blank:' + this.blank.time + 'ms');
 			this.blank.start = 0;
