@@ -1,35 +1,60 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width">
-	<title>Device Checker</title>
-	<link rel="stylesheet" href="css/device_check.css">
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Device Checker</title>
+  <style>
+* {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+}
+body {
+  background-image: url(data:image/gif;base64,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);
+  text-align: center;
+}
+#button {
+  display: table;
+  margin: 20px auto;
+  width: 200px;
+  height: 40px;
+  border: 2px solid #333;
+  border-radius: 10px;
+  background-color: #d66;
+  color: #fff;
+  text-align: center;
+  font-size: 28px;
+  cursor: pointer;
+}
+#button > div {
+  display: table-cell;
+  vertical-align: middle;
+}
+#display {
+  margin: 10px auto;
+  padding: 5px;
+  width: 300px;
+  background-color: #fff;
+  text-align: left;
+}
+  </style>
+  <script>
+document.addEventListener("DOMContentLoaded", () => {
+  const showInfo = () => {
+    let str = [
+      'deviceWidth: ' + window.screen.width + 'px',
+      'deviceHeight: ' + window.screen.height + 'px',
+      'devicePixelRatio: ' + window.devicePixelRatio
+    ];
+    document.querySelector('#display').innerHTML = str.join('<br>');
+  };
+  document.querySelector('#button').addEventListener('click',showInfo, false);
+  window.addEventListener('orientationchange',showInfo, false);
+}, false);
+  </script>
 </head>
 <body>
-<div id="button"><div>check!</div></div>
+<div id="button"><div>Check!</div></div>
 <div id="display">result...</div>
-<script>
-	$(function(){
-		$('#button').click(function(){
-			showInfo();
-		});
-		$(window).bind('orientationchange',function(){
-			showInfo();
-		});
-		function showInfo(){
-			var width = window.screen.width;
-			var height = window.screen.height;
-			var dpr = window.devicePixelRatio;
-			var str = [
-				'deviceWidth: ' + width + 'px',
-				'deviceHeight: ' + height + 'px',
-				'devicePixelRatio: ' + dpr
-			];
-			$('#display').html(str.join('<br>'));
-		}
-	});
-</script>
 </body>
 </html>
