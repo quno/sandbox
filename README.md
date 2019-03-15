@@ -1,7 +1,7 @@
 sandbox
 =======
 
-repository for sandbox
+Repository for sandbox.
 
 ## モールス信号入力
 
@@ -21,6 +21,12 @@ https://qlab.dev/morse.html
 
 例：20文字の英数記号を混ぜたパスワードを20個生成する
 ```
-ruby generate.rb 20 20 true
+$ ruby generate.rb 20 20 true
 ```
 
+## デバイスチェック
+
+- device_check.html
+
+デバイスの幅（deviceWidth）と高さ（deviceHeight）、デバイスピクセル比（devicePixelRatio）を表示する  
+https://qlab.dev/device_check.html
